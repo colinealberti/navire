@@ -20,8 +20,8 @@ class Navire
     /**
      * @ORM\Column(type="string", length=7)
      * @Assert\Regex(
-     *     pattern="/[1-9]{7}/",
-     *     message="Le numéro IMO doit comporter 7 chiffres"
+     *      pattern="/[1-9]{7}/",
+     *      message="Le numéro IMO doit domporter 7 chiffres"
      * )
      */
     private $imo;
@@ -29,25 +29,38 @@ class Navire
     /**
      * @ORM\Column(type="string", length=100)
      * @Assert\Length(
+     *                  min=3
+     *                  max=100
+     *                  )
      */
     private $navire;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=9)
      */
     private $mmsi;
+
+    /**
+     * @ORM\Column(type="string", length=10)
+     */
+    private $indicatifAppel;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $eta;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getImo(): ?int
+    public function getImo(): ?string
     {
         return $this->imo;
     }
 
-    public function setImo(int $imo): self
+    public function setImo(string $imo): self
     {
         $this->imo = $imo;
 
@@ -66,14 +79,38 @@ class Navire
         return $this;
     }
 
-    public function getMmsi(): ?int
+    public function getMmsi(): ?string
     {
         return $this->mmsi;
     }
 
-    public function setMmsi(int $mmsi): self
+    public function setMmsi(string $mmsi): self
     {
         $this->mmsi = $mmsi;
+
+        return $this;
+    }
+
+    public function getIndicatifAppel(): ?\DateTimeInterface
+    {
+        return $this->indicatifAppel;
+    }
+
+    public function setIndicatifAppel(?\DateTimeInterface $indicatifAppel): self
+    {
+        $this->indicatifAppel = $indicatifAppel;
+
+        return $this;
+    }
+
+    public function getEta(): ?\DateTimeInterface
+    {
+        return $this->eta;
+    }
+
+    public function setEta(?\DateTimeInterface $eta): self
+    {
+        $this->eta = $eta;
 
         return $this;
     }
