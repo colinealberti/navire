@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\NavireRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NavireRepository::class)
@@ -29,9 +30,9 @@ class Navire
     /**
      * @ORM\Column(type="string", length=100)
      * @Assert\Length(
-     *                  min=3
+     *                  min=3,
      *                  max=100
-     *                  )
+     *               )
      */
     private $navire;
 
@@ -111,7 +112,7 @@ class Navire
     public function setEta(?\DateTimeInterface $eta): self
     {
         $this->eta = $eta;
-
+        
         return $this;
     }
 }
