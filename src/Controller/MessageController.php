@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Swoole\Http\Request;
+use Symfony\Component\HttpFoundation\Request;
 use GestionContact;
 use App\Entity\Message;
 
