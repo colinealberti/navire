@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Entity;
+
 use Swift_Mailer;
 use Twig\Environment;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
