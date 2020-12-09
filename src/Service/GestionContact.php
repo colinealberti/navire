@@ -1,12 +1,18 @@
 <?php
 
+use Swift_Mailer;
+use Twig\Environment;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
+use App\Repository\MessageRepository;
+use pp\Entity\Message;
+
 
 class GestionContact {
     //documentation : https://swiftmailer.symfony.com/docs/sending.html
-    private \Swift_Mailer $mail;
+    private Swift_Mailer $mail;
     private Environment $environnementTwig;
     private ManagerRegistry $doctrine;
-    private MessageRespository $repo;
+    private MessageRepository $repo;
     
     
     function __construct(\Swift_Mailer $mail, Environment $environnementTwig, ManagerRegistry $doctrine, MessageRespository $repo){
