@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Entity;
-
+namespace App\Service;
 use Swift_Mailer;
 use Twig\Environment;
 use Symfony\Bridge\Doctrine\ManagerRegistry;
 use App\Repository\MessageRepository;
-use pp\Entity\Message;
+use App\Entity\Message;
 
 
 class GestionContact {
