@@ -8,6 +8,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\GestionContact;
 use App\Entity\Message;
+use App\Repository\MessageRepository;
+use App\Form\MessageType;
 
 /**
  * @Route("/message", name="message_")
@@ -29,7 +31,7 @@ class MessageController extends AbstractController
             
             $gestionContact->envoiMailContact($message);
             
-            return $this->redirectToRoute($home);
+            return $this->redirectToRoute('message_contact');
         }
         
         return $this->render('message/contact.html.twig', [

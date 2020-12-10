@@ -4,7 +4,7 @@ namespace App\Service;
 
 use Swift_Mailer;
 use Twig\Environment;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
+use Doctrine\Persistence\ManagerRegistry;
 use App\Repository\MessageRepository;
 use App\Entity\Message;
 
@@ -17,7 +17,7 @@ class GestionContact {
     private MessageRepository $repo;
     
     
-    function __construct(\Swift_Mailer $mail, Environment $environnementTwig, ManagerRegistry $doctrine, MessageRespository $repo){
+    function __construct(\Swift_Mailer $mail, Environment $environnementTwig, ManagerRegistry $doctrine, MessageRepository $repo){
         $this->mail = $mail;
         $this->environnementTwig = $environnementTwig;
         $this->doctrine = $doctrine;
