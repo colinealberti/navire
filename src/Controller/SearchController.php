@@ -38,16 +38,12 @@ class SearchController extends AbstractController
     
     /**
      * @Route("/search/handlesearch", name="search_handlesearch")
-     * 
-     * @param Request $request
-     * @param NavireRepository $repo
-     * @return Response
      */
     public function handleSearch(Request $request, NavireRepository $repo): Response{
         $valeur = $request->request->get('form')['cherche'];
         if (isset($request->request->get('form')['envoiimo'])){
             
-            $critere = "imo recherché : " . $valeur;
+            $critere = "imo Recherché : " . $valeur;
         }else{
             
             $critere = "mmsi recherché " . $valeur;
