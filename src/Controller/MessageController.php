@@ -31,6 +31,7 @@ class MessageController extends AbstractController
             
             $gestionContact->envoiMailContact($message);
             
+            $this->addFlash('notification', "Votre message a bien été envoyé");
             return $this->redirectToRoute('message_contact');
         }
         
