@@ -18,6 +18,9 @@ class SearchController extends AbstractController
         ]);
     }
     
+    /**
+     * @Route("/search_handlesearch", name="search_handlesearch")
+     */
     public function searchBar(){
         $form = $this->createFormbuilder()
                 ->setAction($this->generateUrl("search_handlesearch"))
